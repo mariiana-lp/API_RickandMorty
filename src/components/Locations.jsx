@@ -6,7 +6,7 @@ const Characters = () => {
   const [characters, stateCharacters] = useState([]);
   const [info, setInfo] = useState({});
 
-  const initialUrl = "https://rickandmortyapi.com/api/character";
+  const initialUrl = "https://rickandmortyapi.com/api/location";
 
   const fetchCharacters = (initialUrl) => {
     fetch(initialUrl)
@@ -38,12 +38,11 @@ const Characters = () => {
       {characters.map((item, index) => (
         <div key={index} className="col mb-3">
           <div className="card" style={{ maxWidth: "200px" }}>
-            <img src={item.image} alt="" />
             <div className="card-body">
               <h5 className="card-tittle">{item.name}</h5>
               <hr />
-              <p>species: {item.species}</p>
-              <p>location: {item.location.name}</p>
+              <p>type: {item.type}</p>
+              <p>dimension: {item.dimension}</p>
             </div>
           </div>
         </div>
