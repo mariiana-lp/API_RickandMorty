@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import Characters from "./components/Characters";
 import Navbar from "./components/Navbar";
 import Pagination from "./components/Pagination";
+import Search from "./components/Search";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 function App() {
   const [characters, stateCharacters] = useState([]);
@@ -35,6 +37,7 @@ function App() {
     <>
       <Navbar brand={"Rick and Morty App"} />
       <div className="container mt-5">
+        <Search />
         <Characters characters={characters} />
         <Pagination
           prev={info.prev}
